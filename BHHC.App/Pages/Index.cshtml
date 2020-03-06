@@ -1,0 +1,47 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+    <script>
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+        <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Reason Details</h1>
+
+                <table class="table" style="margin: 0;">
+                    <tr>
+                        <td>Type</td>
+                        <td>Importance</td>
+                        <td>Description</td>
+
+                    </tr>
+                    @if (Model._reasons != null &&  Model._reasons.Count() > 0)
+                    {
+                        @foreach (var reason in Model._reasons)
+                        {
+                             <tr>
+                                <td>@(reason.ReasonType)</td>
+                                <td>@(reason.Importance)</td>
+                                <td>@(reason.Description)</td>
+                            </tr>
+
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td>No Reasons Found!</td>                               
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+        </div>
+    </div>
+    </script>
