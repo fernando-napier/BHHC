@@ -12,12 +12,10 @@ namespace BHHC.App
 {
     public class DeleteModel : PageModel
     {
-        private readonly BHHC.Core.ReasonContext _context;
         private readonly IReasonService _reasonService;
 
-        public DeleteModel(BHHC.Core.ReasonContext context, IReasonService reasonService)
+        public DeleteModel(IReasonService reasonService)
         {
-            _context = context;
             _reasonService = reasonService;
         }
 
