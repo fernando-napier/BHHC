@@ -13,12 +13,10 @@ namespace BHHC.App
 {
     public class EditModel : PageModel
     {
-        private readonly BHHC.Core.ReasonContext _context;
         private readonly IReasonService _reasonService;
 
-        public EditModel(BHHC.Core.ReasonContext context, IReasonService reasonService)
+        public EditModel(IReasonService reasonService)
         {
-            _context = context;
             _reasonService = reasonService;
         }
 
@@ -50,24 +48,6 @@ namespace BHHC.App
                 return Page();
             }
 
-            //_context.Attach(Reason).State = EntityState.Modified;
-
-            //try
-            //{
-            //    await _context.SaveChangesAsync();
-            //}
-            //catch (DbUpdateConcurrencyException)
-            //{
-            //    if (!ReasonExists(Reason.ReasonId))
-            //    {
-            //        return NotFound();
-            //    }
-            //    else
-            //    {
-            //        throw;
-            //    }
-            //}
-
             var updateId = await _reasonService.UpdateReasonAsync(Reason.ReasonId, Reason);
 
             if (updateId <= 0)
@@ -78,9 +58,5 @@ namespace BHHC.App
             return RedirectToPage("./Index");
         }
 
-        private bool ReasonExists(int id)
-        {
-            return _context.Reasons.Any(e => e.ReasonId == id);
-        }
     }
 }
