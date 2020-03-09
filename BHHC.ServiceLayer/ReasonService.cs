@@ -3,6 +3,7 @@ using BHHC.DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BHHC.ServiceLayer
 {
@@ -15,31 +16,41 @@ namespace BHHC.ServiceLayer
             _reasonAccessor = reasonAccessor;
         }
 
-        public IEnumerable<Reason> GetAllReasons()
+        public Task<List<Reason>> GetAllReasonsAsync()
         {
-            return _reasonAccessor.GetAllReasons();
+            return _reasonAccessor.GetAllReasonsAsync();
         }
 
-        public IEnumerable<Reason> GetReasons(ReasonType reasonType, ImportanceType importanceType)
+        public Task<List<Reason>> GetReasonsAsync(ReasonType reasonType, ImportanceType importanceType)
         {
-            return _reasonAccessor.GetReasons(reasonType, importanceType);
+            return _reasonAccessor.GetReasonsAsync(reasonType, importanceType);
         }
 
-        public int InsertReason(Reason reason)
+        public Task<int> InsertReasonAsync(Reason reason)
         {
-            return _reasonAccessor.InsertReason(reason);
+            return _reasonAccessor.InsertReasonAsync(reason);
         }
 
-        public int UpdateReason(int reasonId, Reason reason)
+        public async Task<int> UpdateReasonAsync(int reasonId, Reason reason)
         {
-            var reasonToUpdate = _reasonAccessor.GetReasonById(reasonId);
+            var reasonToUpdate = await _reasonAccessor.GetReasonByIdAsync(reasonId);
 
             if (reasonToUpdate == null)
             {
                 return 0;
             }
 
-            return _reasonAccessor.UpdateReason(reason);
+            return await _reasonAccessor.UpdateReasonAsync(reason);
+        }
+
+        public Task<Reason> GetReasonByIdAsync(int reasonId)
+        {
+            return _reasonAccessor.GetReasonByIdAsync(reasonId);
+        }
+
+        public Task<int> DeleteReasonAsync(Reason reason)
+        {
+            return _reasonAccessor.DeleteReasonAsync(reason);
         }
     }
 }

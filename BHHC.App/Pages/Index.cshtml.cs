@@ -2,30 +2,30 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BHHC.Core;
-using BHHC.ServiceLayer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using BHHC.Core;
+using BHHC.ServiceLayer;
 
-namespace BHHC.Pages
+namespace BHHC.App
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
-        private readonly IReasonService _reasonService;
-        public IEnumerable<Reason> _reasons;
+        public IList<Reason> _reasons { get; set; }
 
-        public IndexModel(ILogger<IndexModel> logger, IReasonService reasonService)
+        private readonly BHHC.Core.ReasonContext _context;
+        private readonly IReasonService _reasonService;
+
+        public IndexModel(BHHC.Core.ReasonContext context, IReasonService reasonService)
         {
-            _logger = logger;
+            _context = context;
             _reasonService = reasonService;
         }
 
-        public void OnGet()
+        public async Task OnGetAsync()
         {
-            // grab all the reasons from sqlite
-            _reasons = _reasonService.GetAllReasons();
+            _reasons = await _reasonService.GetAllReasonsAsync();
         }
     }
 }

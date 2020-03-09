@@ -1,14 +1,17 @@
 ﻿using BHHC.Core;
+using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace BHHC.DataAccessLayer
 {
     public interface IReasonAccessor
     {
-        int InsertReason(Reason reason);
-        int UpdateReason(Reason reason);
-        IEnumerable<Reason> GetReasons(ReasonType reasonType, ImportanceType importanceType);
-        Reason GetReasonById(int reasonId);
-        IEnumerable<Reason> GetAllReasons();
+        Task<int> InsertReasonAsync(Reason reason);
+        Task<int> UpdateReasonAsync(Reason reason);
+        Task<List<Reason>> GetReasonsAsync(ReasonType reasonType, ImportanceType importanceType);
+        Task<Reason> GetReasonByIdAsync(int reasonId);
+        Task<List<Reason>> GetAllReasonsAsync();
+        Task<int> DeleteReasonAsync(Reason reason);
     }
 }

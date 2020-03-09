@@ -1,0 +1,52 @@
+﻿@page
+@model BHHC.App.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Reason</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Reason.Description" class="control-label"></label>
+                <input asp-for="Reason.Description" class="form-control" />
+                <span asp-validation-for="Reason.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <select asp-for="Reason.ReasonType" class="form-control">
+                    <option></option>
+                    <option value="BENEFITS">benefits</option>
+                    <option value="CAREER_ADVANCEMENT">career advancement</option>
+                    <option value="CULTURE">culture</option>
+                    <option value="STABILITY">stability</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select asp-for="Reason.ImportanceType" class="form-control">
+                    <option></option>
+                    <option value="LOW">low</option>
+                    <option value="MEDIUM">mid</option>
+                    <option value="HIGH">high</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

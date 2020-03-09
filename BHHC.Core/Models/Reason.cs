@@ -7,7 +7,7 @@ namespace BHHC.Core
         public int ReasonId { get; set; }
         public string Description { get; set; }
         public ReasonType ReasonType { get; set; }
-        public ImportanceType Importance { get; set; }
+        public ImportanceType ImportanceType { get; set; }
 
     }
 }

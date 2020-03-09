@@ -1,8 +1,0 @@
-C:\Users\Fernando\source\repos\BHHC\BHHC.ModelPresentationLayer\bin\Debug\netstandard2.0\BHHC.ModelPresentationLayer.deps.json
-C:\Users\Fernando\source\repos\BHHC\BHHC.ModelPresentationLayer\bin\Debug\netstandard2.0\BHHC.ModelPresentationLayer.dll
-C:\Users\Fernando\source\repos\BHHC\BHHC.ModelPresentationLayer\bin\Debug\netstandard2.0\BHHC.ModelPresentationLayer.pdb
-C:\Users\Fernando\source\repos\BHHC\BHHC.ModelPresentationLayer\obj\Debug\netstandard2.0\BHHC.ModelPresentationLayer.csprojAssemblyReference.cache
-C:\Users\Fernando\source\repos\BHHC\BHHC.ModelPresentationLayer\obj\Debug\netstandard2.0\BHHC.ModelPresentationLayer.AssemblyInfoInputs.cache
-C:\Users\Fernando\source\repos\BHHC\BHHC.ModelPresentationLayer\obj\Debug\netstandard2.0\BHHC.ModelPresentationLayer.AssemblyInfo.cs
-C:\Users\Fernando\source\repos\BHHC\BHHC.ModelPresentationLayer\obj\Debug\netstandard2.0\BHHC.ModelPresentationLayer.dll
-C:\Users\Fernando\source\repos\BHHC\BHHC.ModelPresentationLayer\obj\Debug\netstandard2.0\BHHC.ModelPresentationLayer.pdb

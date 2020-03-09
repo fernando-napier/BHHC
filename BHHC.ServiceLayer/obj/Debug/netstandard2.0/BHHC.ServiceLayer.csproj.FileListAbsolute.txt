@@ -1,11 +1,3 @@
-C:\Users\Fernando\source\repos\BHHC\BHHC.service\bin\Debug\netstandard2.0\BHHC.ServiceLayer.deps.json
-C:\Users\Fernando\source\repos\BHHC\BHHC.service\bin\Debug\netstandard2.0\BHHC.ServiceLayer.dll
-C:\Users\Fernando\source\repos\BHHC\BHHC.service\bin\Debug\netstandard2.0\BHHC.ServiceLayer.pdb
-C:\Users\Fernando\source\repos\BHHC\BHHC.service\obj\Debug\netstandard2.0\BHHC.ServiceLayer.csprojAssemblyReference.cache
-C:\Users\Fernando\source\repos\BHHC\BHHC.service\obj\Debug\netstandard2.0\BHHC.ServiceLayer.AssemblyInfoInputs.cache
-C:\Users\Fernando\source\repos\BHHC\BHHC.service\obj\Debug\netstandard2.0\BHHC.ServiceLayer.AssemblyInfo.cs
-C:\Users\Fernando\source\repos\BHHC\BHHC.service\obj\Debug\netstandard2.0\BHHC.ServiceLayer.dll
-C:\Users\Fernando\source\repos\BHHC\BHHC.service\obj\Debug\netstandard2.0\BHHC.ServiceLayer.pdb
 C:\Users\Fernando\source\repos\BHHC\BHHC.ServiceLayer\bin\Debug\netstandard2.0\BHHC.ServiceLayer.deps.json
 C:\Users\Fernando\source\repos\BHHC\BHHC.ServiceLayer\bin\Debug\netstandard2.0\BHHC.ServiceLayer.dll
 C:\Users\Fernando\source\repos\BHHC\BHHC.ServiceLayer\bin\Debug\netstandard2.0\BHHC.ServiceLayer.pdb
