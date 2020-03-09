@@ -24,6 +24,8 @@ namespace BHHC.DataAccessLayer
             var deletedEntry = _reasonContext.Reasons.Remove(reason);
             await _reasonContext.SaveChangesAsync();
 
+            // returning the integer here is as a way to give the presentation layer the ability to 'report' on
+            // whether the deletion was successful or not
             return deletedEntry.State == EntityState.Deleted ? 1 : 0;
         }
 
@@ -42,6 +44,9 @@ namespace BHHC.DataAccessLayer
 
         public Task<List<Reason>> GetReasonsAsync(ReasonType reasonType, ImportanceType importanceType)
         {
+            // in some cases it makes sense to async await but in cases like these the overhead of 'async' 
+            // is not worth it and it makes more sense to just return the Task and the calling method here would probably 
+            // already have the async await overhead and EF would handle that gracefully
             return _reasonContext.Reasons.Where(x => x.ImportanceType == importanceType && x.ReasonType == reasonType).ToListAsync();
         }
 
@@ -56,7 +61,6 @@ namespace BHHC.DataAccessLayer
         public async Task<int> UpdateReasonAsync(Reason reason)
         {
             var reasonToUpdate = await _reasonContext.Reasons.Where(x => x.ReasonId == reason.ReasonId).FirstOrDefaultAsync();
-
 
             reasonToUpdate.ImportanceType = reason.ImportanceType;
             reasonToUpdate.ReasonType = reason.ReasonType;

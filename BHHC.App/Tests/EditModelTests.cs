@@ -35,6 +35,7 @@ namespace BHHC.App
             var actual = _target.OnPostAsync().GetAwaiter().GetResult();
 
             // Assert
+            // this cast is so that we can be sure that the action result being returned is correct
             var result = actual as NotFoundResult;
             Assert.NotNull(result);
         }
@@ -50,6 +51,7 @@ namespace BHHC.App
             var actual = _target.OnPostAsync().GetAwaiter().GetResult();
 
             // Assert
+            // this cast is so that we can be sure that the action result being returned is correct
             var result = actual as RedirectToPageResult;
             Assert.NotNull(result);
         }

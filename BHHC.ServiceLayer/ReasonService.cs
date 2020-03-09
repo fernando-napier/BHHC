@@ -33,6 +33,8 @@ namespace BHHC.ServiceLayer
 
         public async Task<int> UpdateReasonAsync(int reasonId, Reason reason)
         {
+            // if the db does not contain a record of the record being passed
+            // then there's no need to try and update the record
             var reasonToUpdate = await _reasonAccessor.GetReasonByIdAsync(reasonId);
 
             if (reasonToUpdate == null)

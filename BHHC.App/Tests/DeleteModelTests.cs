@@ -32,6 +32,7 @@ namespace BHHC.App
             var actual = _target.OnPostAsync(null).GetAwaiter().GetResult();
 
             // Assert
+            // this cast is so that we can be sure that the action result being returned is correct
             var result = actual as NotFoundResult;
             Assert.NotNull(result);
         }
@@ -43,15 +44,12 @@ namespace BHHC.App
             A.CallTo(() => reasonServiceFake.GetReasonByIdAsync(A<int>.Ignored)).Returns(Task.FromResult<Reason>(null));
 
             // Act
-            
             // get awaiter - get result so that we don't have to await this call, also safer than calling .Result
             var actual = _target.OnPostAsync(1).GetAwaiter().GetResult();
 
             // Assert
-
             // here we're making sure that no call to delete was made if the reason does not exist.
             A.CallTo(() => reasonServiceFake.DeleteReasonAsync(A<Reason>.Ignored)).MustNotHaveHappened();
-
             // this cast is so that we can be sure that the action result being returned is correct
             var result = actual as RedirectToPageResult;
             Assert.NotNull(result);
@@ -65,12 +63,10 @@ namespace BHHC.App
             A.CallTo(() => reasonServiceFake.DeleteReasonAsync(A<Reason>.Ignored)).Returns(1);
 
             // Act
-
             // get awaiter - get result so that we don't have to await this call, also safer than calling .Result
             var actual = _target.OnPostAsync(1).GetAwaiter().GetResult();
 
             // Assert
-
             // here we're making sure that the deletion took place
             A.CallTo(() => reasonServiceFake.DeleteReasonAsync(A<Reason>.Ignored)).MustHaveHappenedOnceExactly();
             // this cast is so that we can be sure that the action result being returned is correct

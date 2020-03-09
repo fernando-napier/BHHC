@@ -80,10 +80,6 @@ namespace BHHC
                     context.SaveChanges();
                 }                
             }           
-
-            //using (var context = new ReasonContext(Constants.Options))
-            //{
-            //}
         }
     }
 }
