@@ -1,8 +1,0 @@
-C:\Users\Fernando\source\repos\BHHC\BHHC.Core\bin\Debug\netstandard2.0\BHHC.Core.deps.json
-C:\Users\Fernando\source\repos\BHHC\BHHC.Core\bin\Debug\netstandard2.0\BHHC.Core.dll
-C:\Users\Fernando\source\repos\BHHC\BHHC.Core\bin\Debug\netstandard2.0\BHHC.Core.pdb
-C:\Users\Fernando\source\repos\BHHC\BHHC.Core\obj\Debug\netstandard2.0\BHHC.Core.csprojAssemblyReference.cache
-C:\Users\Fernando\source\repos\BHHC\BHHC.Core\obj\Debug\netstandard2.0\BHHC.Core.AssemblyInfoInputs.cache
-C:\Users\Fernando\source\repos\BHHC\BHHC.Core\obj\Debug\netstandard2.0\BHHC.Core.AssemblyInfo.cs
-C:\Users\Fernando\source\repos\BHHC\BHHC.Core\obj\Debug\netstandard2.0\BHHC.Core.dll
-C:\Users\Fernando\source\repos\BHHC\BHHC.Core\obj\Debug\netstandard2.0\BHHC.Core.pdb
